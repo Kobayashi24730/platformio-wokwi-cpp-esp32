@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Auto Generated",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -180, "left": -120, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -180, "left": 60, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultra1", "top": -180, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 150, "left": -150, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 150, "left": 180, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 240, "left": 180, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "pir1:GND", "black", [] ],
+    [ "esp:3V3", "pir1:VCC", "red", [] ],
+    [ "pir1:OUT", "esp:D4", "green", [] ],
+
+    [ "esp:GND.1", "dht1:GND", "black", [] ],
+    [ "esp:3V3", "dht1:VCC", "red", [] ],
+    [ "dht1:SDA", "esp:D14", "blue", [] ],
+
+    [ "esp:GND.1", "ultra1:GND", "black", [] ],
+    [ "esp:5V", "ultra1:VCC", "red", [] ],
+    [ "ultra1:TRIG", "esp:D27", "orange", [] ],
+    [ "ultra1:ECHO", "esp:D18", "purple", [] ],
+
+    [ "esp:GND.1", "pot1:GND", "black", [] ],
+    [ "esp:3V3", "pot1:VCC", "red", [] ],
+    [ "pot1:SIG", "esp:D34", "yellow", [] ],
+
+    [ "esp:D32", "led1:A", "red", [] ],
+    [ "led1:K", "r1:1", "black", [] ],
+    [ "r1:2", "esp:GND.1", "black", [] ]
+  ]
+}
