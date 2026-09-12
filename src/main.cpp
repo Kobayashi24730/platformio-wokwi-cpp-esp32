@@ -10,7 +10,7 @@ DHT dht(DHT_PINO, DHT_TYPE);
 
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
-const char* api_url = "https://dashboard-pro-para-esp32.onrender.com/api/data/movimento";
+const char* api_url = "seu endpoint da dashboard";
 
 const int PIR_PIN = 4;
 const int TRIG_PIN = 27;
